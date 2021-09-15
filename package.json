@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha ./**/*.js",
     "debug": "nodemon --inspect=0.0.0.0:9229 server.js"
   },
   "repository": {
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/opfx/docker-step-01#readme",
   "dependencies": {
+    "mocha": "^9.1.1",
     "nodemon": "^2.0.12",
     "ronin-database": "^0.1.1",
     "ronin-mocks": "^0.1.6",
