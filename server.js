@@ -6,7 +6,7 @@ const server = ronin.server()
 
 database.connect(process.env.CONNECTIONSTRING)
 server.use('/foo', (req, res) => {
-    return res.json({ "foo": "bar" });
+    return res.json({ "foo": "bar version 2" });
 })
 server.use('/', mocks.server(server.Router(), false, true))
 server.start()
