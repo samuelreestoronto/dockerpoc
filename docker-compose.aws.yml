@@ -13,6 +13,11 @@ services:
       - CONNECTIONSTRING=mongodb://mongo:27017/notes
     command: npm run debug
 
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 1
+
   mongo:
     image: mongo:4.2.8
     ports:
