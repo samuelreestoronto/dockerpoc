@@ -1,0 +1,25 @@
+version: "3.8"
+x-aws-vpc: "vpc-0b513ac0344599358"
+
+services:
+  notes:
+    image: opfx/dockerpoc:latest
+
+    ports:
+      - 8000:8000
+
+    environment:
+      - SERVER_PORT=8000
+      - CONNECTIONSTRING=mongodb://mongo:27017/notes
+    command: npm run debug
+
+  mongo:
+    image: mongo:4.2.8
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb:/data/db
+      - mongodb_config:/data/configdb
+volumes:
+  mongodb:
+  mongodb_config:
